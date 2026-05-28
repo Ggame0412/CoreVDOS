@@ -1,0 +1,44 @@
+# CoreVDOS Engine - Proprietary Source-Available License
+
+Copyright (c) 2026 Ggame0412. All rights reserved.
+
+## ENGLISH VERSION
+
+### 1. TERMS AND CONDITIONS
+This Software and its source code are proprietary and protected by copyright laws. This is not an Open Source project. The source code is made available strictly for educational purposes, performance auditing, and contribution to the official repository.
+
+### 2. PERMITTED USES
+You are permitted to:
+* Download, view, and compile the source code for personal, non-commercial testing and evaluation.
+* Modify the source code locally for the sole purpose of submitting improvements, bug fixes, or features back to the official repository via Pull Requests.
+
+### 3. RESTRICTIONS
+You are STRICTLY PROHIBITED from:
+* Creating public forks, clones, or derivative works of this repository for the purpose of starting an independent or competing project.
+* Distributing, publishing, or sub-licensing the source code or compiled binaries on third-party websites, platforms, or package managers under your own name or anonymous aliases without prior written consent from the Copyright Holder.
+* Using this Software, its source code, or any derivative works for commercial purposes.
+
+---
+
+## РУССКАЯ ВЕРСИЯ
+
+### 1. ОБЩИЕ ПОЛОЖЕНИЯ
+Данное Программное Обеспечение (ПО) и его исходный код являются проприетарными и защищены законами об авторском праве. Этот проект не является Свободным ПО (Open Source). Исходный код открыт исключительно для ознакомления, аудита производительности и внесения вклада в официальный репозиторий.
+
+### 2. РАЗРЕШЕННОЕ ИСПОЛЬЗОВАНИЕ
+Вам разрешено:
+* Скачивать, изучать и компилировать исходный код для личного некоммерческого тестирования и оценки производительности.
+* Изменять исходный код локально с единственной целью — отправка исправлений (багфиксов) или новых функций в официальный репозиторий через механизм Pull Requests.
+
+### 3. ОГРАНИЧЕНИЯ И ЗАПРЕТЫ
+Вам КАТЕГОРИЧЕСКИ ЗАПРЕЩЕНО:
+* Создавать публичные форки (Forks), клоны или производные репозитории с целью запуска независимого, ответвленного или конкурирующего проекта.
+* Распространять, публиковать или лицензировать исходный код или скомпилированные бинарные файлы на сторонних ресурсах, сайтах или менеджерах пакетов под своим именем или псевдонимами без предварительного письменного согласия Правообладателя.
+* Использовать данное ПО, его исходный код или любые производные части в коммерческих целях.
+
+---
+
+## TERMINATION
+Any violation of these terms automatically terminates your permission to use the Software and may result in a copyright infringement claim (including GitHub DMCA Takedown notices).
+
+Нарушение любого из условий настоящей лицензии автоматически прекращает действие разрешений и может повлечь за собой претензии по нарушению авторских прав (включая жалобы GitHub DMCA для удаления незаконных копий).
