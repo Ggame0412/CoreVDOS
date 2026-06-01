@@ -12,4 +12,4 @@ Instead of interpreting heavyweight scripts on the fly, CoreVDOS utilizes its ow
 
 -----------
 
-[**Documentation on almost everything**](ARCHITECTURE.md)
+[**Documentation on almost everything**](docs/ARCHITECTURE.md)
