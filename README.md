@@ -2,6 +2,8 @@
 
 **!!!This project is a continuation of my other repository VDOSL!!!**
 
+Project Status: Active Development / Alpha. Codebase is heavy work-in-progress, subject to major refactoring and optimizations.
+
 --------------
 
 **CoreVDOS** is a high-performance programmable sandbox runtime built on the optimization principles of the 2000s. The engine's primary goal is to extract maximum FPS on low-spec devices-including Android hardware and 2011-era laptops-while simulating complex worlds driven by a text-based DSL.
