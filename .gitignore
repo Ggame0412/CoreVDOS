@@ -4,3 +4,5 @@ build/linux/CMakeFiles/
 build/linux/CMakeCache.txt
 build/linux/Makefile
 build/linux/cmake_install.cmake
+vcpkg/
+vcpkg_installed/
