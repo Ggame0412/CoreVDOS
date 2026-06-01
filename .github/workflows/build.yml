@@ -1,0 +1,44 @@
+name: CoreVDOS Build
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build-linux:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      with:
+        submodules: recursive
+
+    - name: Install Linux Graphics Dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y \
+          libx11-dev \
+          libxrandr-dev \
+          libxinerama-dev \
+          libxcursor-dev \
+          libxi-dev \
+          libgl1-mesa-dev \
+          libglu1-mesa-dev \
+          xorg-dev \
+          libxkbcommon-dev \
+          libwayland-dev \
+          wayland-protocols
+
+    - name: Setup vcpkg
+      uses: friendlyanon/setup-vcpkg@v1
+      with:
+        committish: master
+
+    - name: Configure CMake
+      run: |
+        cmake -B build -S . -DCMAKE_TOOLCHAIN_FILE=${{ github.workspace }}/vcpkg/scripts/buildsystems/vcpkg.cmake
+
+    - name: Build Project
+      run: |
+        cmake --build build --config Release
+
