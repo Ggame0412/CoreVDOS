@@ -1,0 +1,24 @@
+{
+  "version": 3,
+  "configurePresets": [
+    {
+      "name": "linux",
+      "displayName": "Linux",
+      "generator": "Unix Makefiles",
+      "binaryDir": "${sourceDir}/build/linux"
+    },
+    {
+      "name": "windows",
+      "displayName": "Windows (cross)",
+      "generator": "Unix Makefiles",
+      "binaryDir": "${sourceDir}/build/windows",
+      "toolchainFile": "${sourceDir}/llvm-mingw-toolchain.cmake"
+    },
+    {
+      "name": "android",
+      "displayName": "Android (cross)",
+      "generator": "Unix Makefiles",
+      "binaryDir": "${sourceDir}/build/android"
+    }
+  ]
+}

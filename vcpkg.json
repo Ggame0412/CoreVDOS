@@ -1,0 +1,11 @@
+{
+  "name": "GCGEngine",
+  "version": "0.0.1",
+  "builtin-baseline": "233da39d564cfbe9dbdf7f4803fb9e9f96c21e64",
+  "dependencies": [
+    "raylib",
+    "flecs",
+    "reactphysics3d"
+  ]
+}
+
