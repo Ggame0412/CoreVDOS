@@ -11,3 +11,5 @@ Instead of interpreting heavyweight scripts on the fly, CoreVDOS utilizes its ow
 Вместо интерпретации тяжелых скриптов «на лету», CoreVDOS использует собственный компилируемый язык описания реальности **VDOSL**, полностью исключая задержки (Stuttering) и микро-фризы.
 
 -----------
+
+-[Documentation on almost everything](ARCHITECTURE.md)
