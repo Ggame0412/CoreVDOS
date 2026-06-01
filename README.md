@@ -1,5 +1,9 @@
 # CoreVDOS
 
+**!!!This project is a continuation of my other repository VDOSL!!!**
+
+--------------
+
 **CoreVDOS** is a high-performance programmable sandbox runtime built on the optimization principles of the 2000s. The engine's primary goal is to extract maximum FPS on low-spec devices—including Android hardware and 2011-era laptops—while simulating complex worlds driven by a text-based DSL.
 
 Instead of interpreting heavyweight scripts on the fly, CoreVDOS utilizes its own compilable reality description language, **VDOSL**, completely eliminating stuttering and micro-freezes.
