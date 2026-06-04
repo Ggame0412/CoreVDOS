@@ -1,0 +1,83 @@
+cmake_minimum_required(VERSION 3.16)
+project(Engine)
+
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+# ---- raylib ----
+#find_package(raylib QUIET)
+#if(NOT raylib_FOUND)
+#    add_subdirectory(raylib)
+#endif()
+
+add_library(flecs_static STATIC IMPORTED)
+set_target_properties(flecs_static PROPERTIES
+    IMPORTED_LOCATION ${CMAKE_SOURCE_DIR}/third-party/flecs/libflecs_static.a
+    INTERFACE_INCLUDE_DIRECTORIES ${CMAKE_SOURCE_DIR}/third-party/flecs/include
+)
+
+# ---- flecs (уже собран) ----
+add_library(flecs_static STATIC IMPORTED)
+set_target_properties(flecs_static PROPERTIES
+    IMPORTED_LOCATION ${CMAKE_SOURCE_DIR}/third-party/flecs/libflecs_static.a
+    INTERFACE_INCLUDE_DIRECTORIES ${CMAKE_SOURCE_DIR}/third-party/flecs/include
+)
+
+# ---- ReactPhysics3D (уже собран) ----
+add_library(rp3d STATIC IMPORTED)
+set_target_properties(rp3d PROPERTIES
+    IMPORTED_LOCATION ${CMAKE_SOURCE_DIR}/third-party/rp3d/build/libreactphysics3d.a
+    INTERFACE_INCLUDE_DIRECTORIES ${CMAKE_SOURCE_DIR}/third-party/rp3d/include
+)
+
+# ---- Исходники ----
+add_executable(Engine
+    main.cpp
+    player_camera.cpp
+    physics.cpp
+    renderer.cpp
+)
+
+# ---- Заголовки ----
+target_include_directories(Engine PRIVATE
+    ${CMAKE_CURRENT_SOURCE_DIR}
+    ${CMAKE_SOURCE_DIR}/third-party/flecs/include
+    ${CMAKE_SOURCE_DIR}/third-party/rp3d/include
+)
+
+# ---- Линковка ----
+target_link_libraries(Engine PRIVATE
+    raylib
+    flecs_static
+    rp3d
+)
+
+# ---- Платформенные зависимости ----
+if(WIN32)
+    target_link_libraries(Engine PRIVATE winmm)
+    # Дополнительные библиотеки для MinGW
+    target_link_libraries(Engine PRIVATE gdi32 user32)
+elseif(APPLE)
+    target_link_libraries(Engine PRIVATE
+        "-framework OpenGL"
+        "-framework Cocoa"
+        "-framework IOKit"
+        "-framework CoreVideo"
+    )
+elseif(UNIX AND NOT APPLE)
+    target_link_libraries(Engine PRIVATE
+        GL m pthread dl rt X11
+    )
+endif()
+
+# ---- Дебаг режим ----
+option(PM_DEBUG "Enable physics debug" OFF)
+if(PM_DEBUG)
+    target_compile_definitions(Engine PRIVATE PM_DEBUG_ENABLED)
+endif()
+
+# ---- Статическая линковка для Windows (опционально) ----
+if(WIN32 OR CMAKE_CROSSCOMPILING)
+    set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -static")
+    target_link_libraries(Engine PRIVATE -static-libgcc -static-libstdc++)
+endif()

@@ -3,6 +3,17 @@
 // Quake-style PlayerMove физика на базе ReactPhysics3D.
 
 #include "raylib.h"
+
+//reset macros 
+#undef RED
+#undef MAGENTA
+#undef GREEN
+#undef BLUE
+#undef YELLOW
+#undef WHITE
+#undef BLACK
+//that's all for now
+
 #include "../core/math_utils.h"
 #include "reactphysics3d/reactphysics3d.h"
 
